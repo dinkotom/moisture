@@ -1,0 +1,12 @@
+
+
+# go to logs location
+cd $OPENSHIFT_RUBY_LOG_DIR
+
+# database credentials
+
+       Root User: adminQcdfxJq
+   Root Password: wCHYWLl3YEa4
+   Database Name: moisture
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
