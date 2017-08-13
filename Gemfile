@@ -7,6 +7,4 @@ gem 'dm-mysql-adapter'
 gem 'dm-validations'
 gem 'dm-types'
 gem 'logger'
-gem 'jdbc-mysql'
-gem 'do_jdbc'
 
