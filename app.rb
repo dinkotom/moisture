@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'model'
+require_relative 'model'
 
 get '/' do
   # use the views/index.erb file
