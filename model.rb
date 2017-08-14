@@ -1,7 +1,7 @@
 $logger = Logger.new('application.log')
 DataMapper::Logger.new('sql.log', :debug)
 DataMapper::setup(:default, 'mysql://adminQcdfxJq:wCHYWLl3YEa4@127.3.119.2:3306/moisture')
-# DataMapper::setup(:default, 'mysql://bezplenky:SalvatorDali01@localhost/bezplenky')
+# DataMapper::setup(:default, 'mysql://moisture:SalvatorDali01@localhost/moisture')
 
 # encoding: UTF-8
 
@@ -14,3 +14,6 @@ class Measurement
   property :dew_point, Float
   property :comment, Text
 end
+
+DataMapper::Model.raise_on_save_failure = true
+DataMapper.finalize.auto_upgrade!
