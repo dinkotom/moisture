@@ -16,7 +16,7 @@ the time where this server lives is <%= Time.now %>
       Dew point(*C)
     </td>
   </tr>
-  <%= @measurements.each do |measurement| %>
+  <% @measurements.each do |measurement| %>
   <tr>
     <td>
       <%= measurement.time %>
@@ -31,5 +31,5 @@ the time where this server lives is <%= Time.now %>
       <%= measurement.dew_point %>
     </td>
   </tr>
-      <%= end %>
+      <% end %>
 </table>
