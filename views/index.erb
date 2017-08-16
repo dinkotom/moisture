@@ -1,35 +1,3 @@
-the time where this server lives is <%= Time.now %>
-  <br /><br />check out your <a href=/agent>user_agent</a>
-
-<table>
-  <tr>
-    <td>
-      Time
-    </td>
-    <td>
-      Temperature(*C)
-    </td>
-    <td>
-      Relative Humidity(%)
-    </td>
-    <td>
-      Dew point(*C)
-    </td>
-  </tr>
-  <% @measurements.each do |measurement| %>
-  <tr>
-    <td>
-      <%= measurement.time %>
-    </td>
-    <td>
-      <%= measurement.temperature %>
-    </td>
-    <td>
-      <%= measurement.relative_humidity %>
-    </td>
-    <td>
-      <%= measurement.dew_point %>
-    </td>
-  </tr>
-      <% end %>
-</table>
+<a href=/measurements>measurements</a>
+<br>
+<a href=/line_chart>line chart</a>

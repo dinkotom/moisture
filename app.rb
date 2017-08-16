@@ -1,15 +1,19 @@
 require 'sinatra'
 require_relative 'model'
 
+ENV['TZ']='Europe/Prague'
+
 get '/' do
-  # use the views/index.erb file
-  @measurements = Measurement.all
   erb :index
 end
 
-get '/agent' do
-  # use the views/agent.erb file
-  erb :agent
+get '/measurements' do
+  @measurements = Measurement.all(:order => [ :time.desc ])
+  erb :measurements
+end
+
+get '/line_chart' do
+  erb :line_chart
 end
 
 post '/' do

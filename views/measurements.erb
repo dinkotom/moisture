@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <td>
+      Time
+    </td>
+    <td>
+      Temperature(*C)
+    </td>
+    <td>
+      Relative Humidity(%)
+    </td>
+    <td>
+      Dew point(*C)
+    </td>
+  </tr>
+  <% @measurements.each do |measurement| %>
+      <tr>
+        <td>
+          <%= measurement.time.strftime("%F %H:%M") %>
+        </td>
+        <td>
+          <%= measurement.temperature %>
+        </td>
+        <td>
+          <%= measurement.relative_humidity %>
+        </td>
+        <td>
+          <%= measurement.dew_point %>
+        </td>
+      </tr>
+  <% end %>
+</table>
