@@ -13,6 +13,7 @@ get '/measurements' do
 end
 
 get '/line_chart' do
+  @measurements = Measurement.all(:limit => 100, :order => [ :time.desc ])
   erb :line_chart
 end
 
