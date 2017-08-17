@@ -13,7 +13,7 @@ get '/measurements' do
 end
 
 get '/line_chart' do
-  @measurements = Measurement.all(:limit => 100, :order => [ :time.desc ]).sort { |x,y| y.time <=> x.time }
+  @measurements = Measurement.all(:limit => 100, :order => [ :time.desc ]).sort { |x,y| x.time <=> y.time }
   erb :line_chart
 end
 
