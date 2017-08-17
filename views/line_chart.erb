@@ -13,7 +13,7 @@
                     <% end %>
             ],
             datasets: [{
-                label: 'apples',
+                label: 'Temperature',
                 data: [
                     <% @measurements.each do |measurement| %>
                     <%= measurement.temperature %>,
@@ -21,7 +21,7 @@
                 ],
                 backgroundColor: "rgba(153,255,51,0.4)"
             }, {
-                label: 'oranges',
+                label: 'Dew point',
                 data: [
                     <% @measurements.each do |measurement| %>
                     <%= measurement.dew_point %>,
