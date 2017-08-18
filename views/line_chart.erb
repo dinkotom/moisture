@@ -9,21 +9,24 @@
         data: {
             labels: [
                     <% @measurements.each do |measurement| %>
-            '<%= measurement.time %>',
+            '<%= measurement.time.strftime("%F %H:%M") %>',
                     <% end %>
             ],
             datasets: [{
                 label: 'Temperature',
                 yAxisID: 'y-axis-0',
+                cubicInterpolationMode: 'default',
+                fill: false,
                 data: [
                     <% @measurements.each do |measurement| %>
                     <%= measurement.temperature %>,
                     <% end %>
                 ],
-                backgroundColor: "rgba(153,255,51,0.4)"
+                backgroundColor: "rgba(255, 87, 87, 0.5)"
             },
                 {
                 label: 'Dew point',
+                fill: false,
                 yAxisID: 'y-axis-0',
                 data: [
                     <% @measurements.each do |measurement| %>
@@ -40,7 +43,7 @@
                         <%= measurement.relative_humidity %>,
                         <% end %>
                     ],
-                    backgroundColor: "rgba(255,103,0,0.4)"
+                    backgroundColor: "rgba(102, 171, 255, 0.5)"
                 }
             ]
         },
