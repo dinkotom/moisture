@@ -15,11 +15,10 @@
             datasets: [{
                 label: 'Temperature',
                 yAxisID: 'y-axis-0',
-                cubicInterpolationMode: 'default',
                 fill: false,
                 data: [
                     <% @measurements.each do |measurement| %>
-                    <%= measurement.temperature %>,
+                    <%= measurement.temperature.round(1) %>,
                     <% end %>
                 ],
                 backgroundColor: "rgba(255, 87, 87, 0.5)"
@@ -30,7 +29,7 @@
                 yAxisID: 'y-axis-0',
                 data: [
                     <% @measurements.each do |measurement| %>
-                    <%= measurement.dew_point %>,
+                    <%= measurement.dew_point.round(1) %>,
                     <% end %>
                 ],
                 backgroundColor: "rgba(255,153,0,0.4)"
@@ -40,7 +39,7 @@
                     yAxisID: 'y-axis-1',
                     data: [
                         <% @measurements.each do |measurement| %>
-                        <%= measurement.relative_humidity %>,
+                        <%= measurement.relative_humidity.round(0) %>,
                         <% end %>
                     ],
                     backgroundColor: "rgba(102, 171, 255, 0.5)"
