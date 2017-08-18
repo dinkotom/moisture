@@ -18,10 +18,10 @@
                 fill: false,
                 data: [
                     <% @measurements.each do |measurement| %>
-                    <%= measurement.temperature.round(1) %>,
+                    <%= measurement.temperature %>,
                     <% end %>
                 ],
-                backgroundColor: "rgba(255, 87, 87, 0.5)"
+                backgroundColor: "rgba(255, 87, 87, 1)"
             },
                 {
                 label: 'Dew point',
@@ -29,10 +29,10 @@
                 yAxisID: 'y-axis-0',
                 data: [
                     <% @measurements.each do |measurement| %>
-                    <%= measurement.dew_point.round(1) %>,
+                    <%= measurement.dew_point %>,
                     <% end %>
                 ],
-                backgroundColor: "rgba(255,153,0,0.4)"
+                backgroundColor: "rgba(255,153,0,1)"
             },
                 {
                     label: 'Relative humidity',
