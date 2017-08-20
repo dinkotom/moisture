@@ -7,4 +7,4 @@ gem 'dm-mysql-adapter'
 gem 'dm-validations'
 gem 'dm-types'
 gem 'logger'
-
+gem 'test-unit'

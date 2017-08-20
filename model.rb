@@ -1,9 +1,18 @@
-$logger = Logger.new('application.log')
-DataMapper::Logger.new('sql.log', :debug)
-DataMapper::setup(:default, 'mysql://adminQcdfxJq:wCHYWLl3YEa4@127.3.119.2:3306/moisture')
-# DataMapper::setup(:default, 'mysql://moisture:SalvatorDali01@localhost/moisture')
-
 # encoding: UTF-8
+
+case
+  when ENV['RACK_ENV'] == 'test'
+    $logger = Logger.new('/dev/null')
+    DataMapper::setup(:default, 'sqlite3::memory:')
+  when ENV['OPENSHIFT_LOGIN'] == 'tomas.dinkov@gmail.com'
+    $logger = Logger.new('application.log')
+    DataMapper::Logger.new('sql.log', :debug)
+    DataMapper::setup(:default, 'mysql://adminiU4UuEq:AZC-FXx2vppP@127.8.112.130:3306/bezplenky')
+  else
+    $logger = Logger.new('application.log')
+    DataMapper::Logger.new('sql.log', :debug)
+    DataMapper::setup(:default, 'mysql://bezplenky:SalvatorDali01@localhost/bezplenky')
+end
 
 class Measurement
   include DataMapper::Resource
