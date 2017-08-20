@@ -7,7 +7,7 @@
 #   when ENV['OPENSHIFT_LOGIN'] == 'tomas.dinkov@gmail.com'
     $logger = Logger.new('application.log')
     DataMapper::Logger.new('sql.log', :debug)
-    DataMapper::setup(:default, "#{ENV['OPENSHIFT_MYSQL_DB_URL']}/bezplenky")
+    DataMapper::setup(:default, "#{ENV['OPENSHIFT_MYSQL_DB_URL']}/moisture")
   # else
   #   $logger = Logger.new('application.log')
   #   DataMapper::Logger.new('sql.log', :debug)
